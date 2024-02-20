@@ -6,9 +6,8 @@ vim.keymap.set('n', '<leader>fs', function()
     builtin.grep_string({ search = vim.fn.input("Search > ") })
 end, { desc = "Find string" })
 
-local telescope = require('telescope').setup({
+local setup = require('telescope').setup {
     defaults = {
-        file_ignore_patterns = { "node_modules", ".git", "env", "venv", "build", "dist", "target", "out", "__pycache__", ".cache", ".vscode", ".idea", ".clangd", ".clang-tidy", ".clang-format", ".ccls-cache", ".ccls" },
-    },
-})
-
+        file_ignore_patterns = { "node_modules", ".git", ".env", "__pycache__" },
+    }
+}

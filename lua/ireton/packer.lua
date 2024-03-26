@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
     use('nvim-treesitter/playground')
     -- use('ourigen/skyline.vim')
     use { 'folke/tokyonight.nvim' }
+    use { 'catppuccin/nvim', as = 'catppuccin' }
     use { 'nvim-lualine/lualine.nvim' }
     use('tpope/vim-fugitive')
     use {
@@ -55,8 +56,10 @@ return require('packer').startup(function(use)
         'mfussenegger/nvim-dap',
         requires = {
             { 'rcarriga/nvim-dap-ui' },
+            { 'nvim-neotest/nvim-nio' },
             { 'theHamsta/nvim-dap-virtual-text' },
             { 'nvim-telescope/telescope-dap.nvim' }
+
         }
     }
     use { 'norcalli/nvim-colorizer.lua' }
@@ -70,6 +73,7 @@ return require('packer').startup(function(use)
             { 'nvim-tree/nvim-web-devicons' }
         }
     }
+    -- formatter
     use { 'stevearc/conform.nvim' }
 
     use { 'sindrets/diffview.nvim' }
@@ -80,4 +84,8 @@ return require('packer').startup(function(use)
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
         ft = { "markdown" },
     })
+    use { 'wakatime/vim-wakatime', }
+
+    -- folding
+    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 end)

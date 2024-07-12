@@ -28,3 +28,5 @@ vim.keymap.set("i", "<C-c>", "<Esc>", { desc = "Exit insert mode" })
 
 -- lsp
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open diagnostics" })
+vim.keymap.set("n", "<leader>n", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
+vim.keymap.set("n", "<leader>p", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })

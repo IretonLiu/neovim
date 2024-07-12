@@ -28,6 +28,8 @@ vim.g.loaded_netrwPlugin = 1
 -- autoformat
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 -- vim.opt.colorcolumn = "100"
+-- highlight on yank
+vim.cmd [[autocmd TextYankPost * silent! lua vim.highlight.on_yank({higroup="Search", timeout=100})]]
 
 -- debugging
 vim.keymap.set("n", "<F5>", ":lua require'dap'.continue()<CR>")
